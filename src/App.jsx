@@ -10,6 +10,7 @@ export default function App() {
 
   return (
     <>
+      {/* Hero Section */}
       <header className="w-full h-screen flex items-center justify-center pl-8">
         <nav className="bg-white dark:bg-gray-900 fixed w-full z-50 top-0 start-0 border-b border-gray-200 dark:border-gray-600 opacity-90">
           <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-3">
@@ -153,9 +154,86 @@ export default function App() {
           className="w-full flex flex-col items-center justify-center text-center"
           data-aos="fade-up"
         >
-          <img src="src/assets/test2.png" alt="Profile Image" className="w-1/2" />
+          <img
+            src="src/assets/test2.png"
+            alt="Profile Image"
+            className="w-1/2"
+          />
         </div>
       </header>
+      {/* Service */}
+      <section className="h-[70vh] pt-24" id="service">
+        <div className="pl-[4%]" data-aos="fade-up">
+          <h2 className="text-xl pb-2 text-gray-500 pl-2">S E R V I C E S</h2>
+          <h3
+            className="text-5xl font-bold text-purple-800"
+            style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+          >
+            Focused on
+          </h3>
+          <div className="relative mt-5">
+            <div className="absolute inset-x-0 bottom-0 bg-gray-600 h-1 w-72"></div>
+          </div>
+        </div>
+
+        <div className="flex justify-center pt-20">
+          {/* Mobile Dev */}
+          <div
+            data-aos="fade-right"
+            className="max-w-md p-6 bg-white border-2 border-purple-800 rounded-xl shadow dark:bg-gray-800 dark:border-gray-700 mr-12"
+          >
+            <img
+              src="src/assets/mobile.png"
+              className="h-12"
+              alt="Mobile Development Icon"
+            />
+            <h4 className="mb-2 pt-5 text-3xl font-semibold tracking-tight text-gray-900 dark:text-white">
+              Mobile Dev
+            </h4>
+            <p className="mb-3 font-normal text-xl text-gray-500 dark:text-gray-400">
+              Design and build engaging mobile applications, focusing on
+              seamless integration with backend systems and third-party
+              services.
+            </p>
+          </div>
+          {/* FrontEnd Dev */}
+          <div
+            data-aos="fade-down"
+            className="max-w-md p-6 bg-white border-2 border-purple-800 rounded-xl shadow dark:bg-gray-800 dark:border-gray-700 mr-12"
+          >
+            <img
+              src="src/assets/coding.png"
+              className="h-12"
+              alt="Frontend Development Icon"
+            />
+            <h4 className="mb-2 pt-5 text-3xl font-semibold tracking-tight text-gray-900 dark:text-white">
+              Frontend
+            </h4>
+            <p className="mb-3 font-normal text-xl text-gray-500 dark:text-gray-400">
+              Design and implement engaging user interfaces. Leverage expertise
+              in HTML, CSS, JavaScript, and modern frameworks.
+            </p>
+          </div>
+          {/* Backend Dev */}
+          <div
+            data-aos="fade-left"
+            className="max-w-md p-6 bg-white border-2 border-purple-800 rounded-xl shadow dark:bg-gray-800 dark:border-gray-700"
+          >
+            <img
+              src="src/assets/backend-coding.png"
+              className="h-12"
+              alt="Backend Development Icon"
+            />
+            <h4 className="mb-2 pt-5 text-3xl font-semibold tracking-tight text-gray-900 dark:text-white">
+              Backend
+            </h4>
+            <p className="mb-3 font-normal text-xl text-gray-500 dark:text-gray-400">
+              Develop and maintain server-side logic and databases, ensuring
+              robust and scalable application performance.
+            </p>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
