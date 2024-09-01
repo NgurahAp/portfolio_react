@@ -234,6 +234,238 @@ export default function App() {
           </div>
         </div>
       </section>
+      {/* Portfolio */}
+      <section className="pt-24 pb-20 h-screen" id="project">
+        <div className="container mx-auto px-8">
+          <div data-aos="fade-up">
+            <h2 className="text-xl pb-2 text-gray-500 pl-2">
+              P O R T F O L I O S
+            </h2>
+            <h3 className="text-5xl pb-2 font-bold text-purple-800 font-plus-jakarta">
+              My Latest Works
+            </h3>
+            <div className="relative mt-3">
+              <div className="w-1/4 absolute inset-x-0 bottom-0 bg-gray-600 h-1"></div>
+            </div>
+          </div>
+          <div className="relative w-full  mx-auto pt-16" data-aos="fade-up">
+            {/* Carousel Wrapper */}
+            <div
+              id="indicators-carousel"
+              className="relative border border-gray-300 w-full h-96 z-10" // H-96 untuk menambahkan tinggi carousel
+              data-carousel="static"
+            >
+              <div className="relative h-[32rem] overflow-hidden rounded-lg items-center">
+                {/* ResQGuide */}
+                <div
+                  className="hidden duration-700 ease-in-out flex"
+                  data-carousel-item="active"
+                >
+                  <div className="flex-[3_3_0%] overflow-hidden">
+                    <img
+                      src="src/assets/resqguide.png"
+                      alt="ResQGuide"
+                      className="block w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="flex-[1_1_0%] p-6 bg-white flex flex-col">
+                    <h3 className="text-5xl pt-8 font-bold tracking-tight text-gray-900 dark:text-white mb-3">
+                      ResQGuide
+                    </h3>
+                    <p className="text-xl mb-3">
+                      My first Flutter app available on Play Store. The app
+                      provides first aid guidance with the assistance of
+                      artificial intelligence. I utilized OpenAI's AI technology
+                      to search for guidance that isn't available within the
+                      app.
+                    </p>
+                    <div className="flex">
+                      <a
+                        href="https://play.google.com/store/apps/details?id=com.ngurahpratama.resqguide"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
+                      >
+                        <img
+                          src="src/assets/gstore.png"
+                          alt="Google Store Icon"
+                          className="w-5 h-5 mr-2"
+                        />
+                        Google Store
+                      </a>
+                      <a
+                        href="https://github.com/NgurahAp/ResQGuide"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
+                      >
+                        <img
+                          src="src/assets/code.png"
+                          alt="Source Code Icon"
+                          className="w-5 h-5 mr-2"
+                        />
+                        Source Code
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                {/* BersihBersama */}
+                <div
+                  className="hidden duration-700 ease-in-out flex"
+                  data-carousel-item
+                >
+                  <div className="flex-[3_3_0%] overflow-hidden">
+                    <img
+                      src="src/assets/bersihbersama.jpg"
+                      alt="BersihBersama"
+                      className="block w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="flex-[1_1_0%] p-6 bg-white flex flex-col">
+                    <h3 className="text-5xl pt-8 font-bold tracking-tight text-gray-900 dark:text-white mb-3">
+                      BersihBersama
+                    </h3>
+                    <p className="text-xl mb-3">
+                      Developed a website using Laravel 11 that allows users to
+                      report locations of rivers or areas filled with trash.
+                      These reports are then processed by the admin team to
+                      become cleanup events, which can be joined by other users
+                      who have signed up.
+                    </p>
+                    <div className="flex">
+                      <a
+                        href="https://github.com/NgurahAp/BersihBersama"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
+                      >
+                        <img
+                          src="src/assets/code.png"
+                          alt="Source Code Icon"
+                          className="w-5 h-5 mr-2"
+                        />
+                        Source Code
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                {/* Gov-Complaint */}
+                <div
+                  className="hidden duration-700 ease-in-out flex"
+                  data-carousel-item
+                >
+                  <div className="flex-[3_3_0%] overflow-hidden">
+                    <img
+                      src="src\assets\gov-complant.png"
+                      alt="Gov-Complaint"
+                      className="block w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="flex-[1_1_0%] p-6 bg-white flex flex-col">
+                    <h3 className="text-5xl pt-8 font-bold tracking-tight text-gray-900 dark:text-white mb-3">
+                      Gov-Complaint
+                    </h3>
+                    <p className="text-xl mb-3">
+                      Gov-Complaint is my capstone project at Alterra, designed
+                      as a complaint management platform for the city of Batam.
+                      The application features include city news, complaint
+                      forms, complaint status, responses, complaint history,
+                      categories, notifications, and live chat with Customer
+                      Service.
+                    </p>
+                    <div className="flex">
+                      <a
+                        href="https://github.com/Capstone-Tim-15/e-complaint-mobile"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
+                      >
+                        <img
+                          src="src/assets/code.png"
+                          alt="Source Code Icon"
+                          className="w-5 h-5 mr-2"
+                        />
+                        Source Code
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {/* Slider Indicators */}
+              <div className="absolute z-30 flex -translate-x-1/2 space-x-3 rtl:space-x-reverse bottom-5 left-1/2">
+                <button
+                  type="button"
+                  className="w-3 h-3 rounded-full bg-gray-300"
+                  aria-current="true"
+                  aria-label="Slide 1"
+                  data-carousel-slide-to="0"
+                ></button>
+                <button
+                  type="button"
+                  className="w-3 h-3 rounded-full bg-gray-300"
+                  aria-current="false"
+                  aria-label="Slide 2"
+                  data-carousel-slide-to="1"
+                ></button>
+                <button
+                  type="button"
+                  className="w-3 h-3 rounded-full bg-gray-300"
+                  aria-current="false"
+                  aria-label="Slide 3"
+                  data-carousel-slide-to="2"
+                ></button>
+              </div>
+              {/* Slider Controls */}
+              <button
+                type="button"
+                className="absolute top-[50%] -translate-y-[50%] left-0 z-30 flex items-center justify-center px-4 cursor-pointer group focus:outline-none"
+                data-carousel-prev
+              >
+                <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50 focus:ring-4 focus:ring-white">
+                  <svg
+                    className="w-4 h-4 text-purple-800 rtl:rotate-180"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 6 10"
+                  >
+                    <path
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M5 1L1 5l4 4"
+                    />
+                  </svg>
+                  <span className="sr-only">Previous</span>
+                </span>
+              </button>
+              <button
+                type="button"
+                className="absolute top-[50%] -translate-y-[50%] right-0 z-30 flex items-center justify-center px-4 cursor-pointer group focus:outline-none"
+                data-carousel-next
+              >
+                <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50 focus:ring-4 focus:ring-white">
+                  <svg
+                    className="w-4 h-4 text-purple-800 rtl:rotate-180"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 6 10"
+                  >
+                    <path
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M1 9l4-4-4-4"
+                    />
+                  </svg>
+                  <span className="sr-only">Next</span>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
