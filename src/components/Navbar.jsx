@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 import { Introduction } from "./Introduction";
+import { Skills } from "./Skills";
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,24 +12,24 @@ export const Navbar = () => {
   };
 
   const menuVariants = {
-  closed: {
-    y: "-100%",
-    transition: {
-      type: "spring",
-      stiffness: 300,
-      damping: 40,
+    closed: {
+      y: "-100%",
+      transition: {
+        type: "spring",
+        stiffness: 300,
+        damping: 40,
+      },
     },
-  },
-  open: {
-    y: 0,
-    transition: {
-      type: "spring",
-      stiffness: 300,
-      damping: 40,
-      delay: 0.1, // Menambahkan delay 0.2 detik
+    open: {
+      y: 0,
+      transition: {
+        type: "spring",
+        stiffness: 300,
+        damping: 40,
+        delay: 0.1, // Menambahkan delay 0.2 detik
+      },
     },
-  },
-};
+  };
 
   const lineVariants = {
     hidden: { width: 0 },
@@ -165,6 +166,7 @@ export const Navbar = () => {
         </AnimatePresence>
       </nav>
       <Introduction isOpen={isOpen} />
+      <Skills />
     </>
   );
 };
