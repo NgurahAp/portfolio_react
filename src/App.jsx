@@ -1,11 +1,22 @@
-import "flowbite/dist/flowbite.css";
+import { useState } from "react";
 import { Navbar } from "./components/Navbar";
+import SplashScreen from "./components/SplashScreen"; // Impor komponen
 
-export default function App() {
+const App = () => {
+  const [showSplash, setShowSplash] = useState(true);
+
   return (
     <>
-      <Navbar />
-      <section className="h-screen px-20 text-[#dfdad5] py-28"></section>
+      {showSplash ? (
+        <SplashScreen onFinished={() => setShowSplash(false)} />
+      ) : (
+        <>
+          <Navbar />
+          <section className="h-screen px-20 text-[#dfdad5] py-28"></section>
+        </>
+      )}
     </>
   );
-}
+};
+
+export default App;
