@@ -166,7 +166,7 @@ export const Navbar = () => {
         </AnimatePresence>
       </nav>
       <Introduction isOpen={isOpen} />
-      <Skills />
+      <Skills isOpen={isOpen} />
     </>
   );
 };

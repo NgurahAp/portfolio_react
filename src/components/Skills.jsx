@@ -1,9 +1,22 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
+import PropTypes from "prop-types";
 
-export const Skills = () => {
+export const Skills = ({ isOpen }) => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
+
+  const skillVariants = {
+    hidden: { y: 0 },
+    animate: {
+      y: isOpen ? 100 : 0,
+      transition: {
+        type: "spring",
+        stiffness: 200,
+        damping: 20,
+      },
+    },
+  };
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -28,7 +41,7 @@ export const Skills = () => {
     visible: {
       x: 0,
       opacity: 1,
-      transition: { type: "spring", stiffness: 150, delay: 1.5 },
+      transition: { type: "spring", stiffness: 150, delay: 0.5 },
     },
   };
 
@@ -37,7 +50,7 @@ export const Skills = () => {
     visible: {
       x: 0,
       opacity: 1,
-      transition: { type: "spring", stiffness: 150, delay: 2 },
+      transition: { type: "spring", stiffness: 150, delay: 1 },
     },
   };
 
@@ -62,9 +75,12 @@ export const Skills = () => {
   }, []);
 
   return (
-    <section
+    <motion.section
       ref={sectionRef}
       className="h-screen flex flex-col justify-center px-20 text-[#dfdad5] py-28"
+      variants={skillVariants}
+      initial="hidden"
+      animate={isOpen ? "animate" : "hidden"} // tambahkan ini
     >
       <div className="w-full items-center justify-center">
         <motion.h1
@@ -207,6 +223,10 @@ export const Skills = () => {
           </motion.div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
+};
+
+Skills.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
 };
