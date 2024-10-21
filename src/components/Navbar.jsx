@@ -47,8 +47,8 @@ export const Navbar = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.1, // Delay after line animation
+        staggerChildren: 0.05, // Menurunkan delay antar huruf
+        delayChildren: 0.1, // Delay setelah animasi garis
       },
     },
   };
@@ -60,8 +60,8 @@ export const Navbar = () => {
       y: 0,
       transition: {
         type: "spring",
-        damping: 12,
-        stiffness: 200,
+        damping: 9, // Menurunkan damping untuk mempercepat animasi
+        stiffness: 300, // Menambahkan stiffness untuk mempercepat respons
       },
     },
   };
