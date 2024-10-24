@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 import { Introduction } from "./Introduction";
 import { Skills } from "./Skills";
+import { MyProject } from "./MyProject";
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -167,6 +168,7 @@ export const Navbar = () => {
       </nav>
       <Introduction isOpen={isOpen} />
       <Skills isOpen={isOpen} />
+      <MyProject />
     </>
   );
 };
