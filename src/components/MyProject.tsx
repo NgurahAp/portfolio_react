@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 interface Project {
   id: string;
   image: string;
+  focusImage: string;
   title: string;
   subtitle: string;
   className: string;
@@ -17,23 +18,26 @@ export const MyProject = () => {
     {
       id: "lxp",
       image: "/projects/lxpBW.jpg",
-      title: "LXP Project",
-      subtitle: "Learning Experience Platform",
-      className: "absolute w-3/4 h-auto right-24 top-[30rem]",
+      focusImage: "/projects/lxp.jpg",
+      title: "LXP M-Knows",
+      subtitle: "Learning Management System.",
+      className: "absolute w-4/6 h-auto right-32 top-[32rem]",
     },
     {
       id: "bersih",
       image: "/projects/bersihBersamabw.jpg",
+      focusImage: "/projects/bersihBersama.jpg",
       title: "Bersih Bersama",
       subtitle: "Cleaning Service Platform",
-      className: "absolute w-2/3 h-auto right-12 top-36",
+      className: "absolute w-4/6 h-auto right-12 top-36",
     },
     {
       id: "resq",
       image: "/projects/resqguideBW.png",
+      focusImage: "/projects/resqguide.png",
       title: "ResQ Guide",
-      subtitle: "Emergency Response Platform",
-      className: "absolute h-80 w-auto left-0 top-64",
+      subtitle: "Emergency Response with AI Powered.",
+      className: "absolute h-64 w-auto left-16 top-72",
     },
   ];
 
@@ -50,6 +54,15 @@ export const MyProject = () => {
           <span className="block w-36 h-[2px] bg-white"></span>
           <span className="block w-36 h-[2px] bg-white"></span>
         </div>
+        <h1 className="text-lg py-5">
+          Showcasing web and mobile apps focused on seamless user experiences.
+        </h1>
+        <button
+          className="border-[1px] rounded-md text-xl w-32 border-[#dfdad5] font-semibold px-2 py-2"
+          style={{ fontFamily: "Playfair Display" }}
+        >
+          MORE
+        </button>
       </div>
       <div className="w-1/2 relative">
         <div className="absolute w-full">
@@ -83,7 +96,7 @@ export const MyProject = () => {
           >
             <motion.div
               layoutId={selectedId}
-              className="relative rounded-lg max-w-[90vw] max-h-[90vh] overflow-hidden"
+              className="relative rounded-lg max-w-[90vw] max-h-[90vh]  overflow-hidden"
               onClick={(e) => e.stopPropagation()}
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{
@@ -95,7 +108,7 @@ export const MyProject = () => {
             >
               <div className="relative">
                 <motion.img
-                  src={selectedProject.image}
+                  src={selectedProject.focusImage}
                   alt={selectedProject.title}
                   className="w-full h-full object-contain max-h-[80vh]"
                   initial={{ scale: 1 }}
