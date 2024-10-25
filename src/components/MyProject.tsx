@@ -1,7 +1,11 @@
-import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import React, { useState, useRef, useEffect } from "react";
+import {
+  motion,
+  AnimatePresence,
+  useInView,
+  useAnimation,
+} from "framer-motion";
 
-// Definisikan interface untuk project
 interface Project {
   id: string;
   image: string;
@@ -9,10 +13,14 @@ interface Project {
   title: string;
   subtitle: string;
   className: string;
+  direction: "left" | "right"; // Menambahkan property untuk arah animasi
 }
 
 export const MyProject = () => {
   const [selectedId, setSelectedId] = useState<string | null>(null);
+  const sectionRef = useRef(null);
+  const isInView = useInView(sectionRef, { once: false, amount: 0.3 });
+  const controls = useAnimation();
 
   const projects: Project[] = [
     {
@@ -22,6 +30,7 @@ export const MyProject = () => {
       title: "LXP M-Knows",
       subtitle: "Learning Management System.",
       className: "absolute w-4/6 h-auto right-32 top-[32rem]",
+      direction: "right",
     },
     {
       id: "bersih",
@@ -30,6 +39,7 @@ export const MyProject = () => {
       title: "Bersih Bersama",
       subtitle: "Cleaning Service Platform",
       className: "absolute w-4/6 h-auto right-12 top-36",
+      direction: "left",
     },
     {
       id: "resq",
@@ -38,41 +48,101 @@ export const MyProject = () => {
       title: "ResQ Guide",
       subtitle: "Emergency Response with AI Powered.",
       className: "absolute h-64 w-auto left-16 top-72",
+      direction: "right",
     },
   ];
 
-  // Function untuk mendapatkan project yang dipilih
+  useEffect(() => {
+    if (isInView) {
+      controls.start("visible");
+    } else {
+      controls.start("hidden");
+    }
+  }, [isInView, controls]);
+
   const selectedProject = selectedId
     ? projects.find((p) => p.id === selectedId)
     : null;
 
+  // Variants untuk animasi scroll
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.3, // Menambahkan delay antar item
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: (direction: "left" | "right") => ({
+      x: direction === "left" ? -100 : 100,
+      opacity: 0,
+    }),
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        bounce: 0.4,
+        duration: 1.2,
+      },
+    },
+  };
+
   return (
-    <section className="h-screen flex px-20">
+    <section ref={sectionRef} className="h-screen flex px-20">
       <div className="w-1/2 flex flex-col justify-center">
-        <h1 className="text-8xl font-bold">My Projects</h1>
-        <div className="space-y-2 space-x-10 py-5">
+        <motion.h1
+          initial={{ opacity: 0, y: 50 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+          transition={{ duration: 0.6 }}
+          className="text-8xl font-bold"
+        >
+          My Projects
+        </motion.h1>
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="space-y-2 space-x-10 py-5"
+        >
           <span className="block w-36 h-[2px] bg-white"></span>
           <span className="block w-36 h-[2px] bg-white"></span>
-        </div>
-        <h1 className="text-lg py-5">
+        </motion.div>
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="text-lg py-5"
+        >
           Showcasing web and mobile apps focused on seamless user experiences.
-        </h1>
-        <button
+        </motion.h1>
+        <motion.button
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.6, delay: 0.6 }}
           className="border-[1px] rounded-md text-xl w-32 border-[#dfdad5] font-semibold px-2 py-2"
           style={{ fontFamily: "Playfair Display" }}
         >
           MORE
-        </button>
+        </motion.button>
       </div>
       <div className="w-1/2 relative">
-        <div className="absolute w-full">
+        <motion.div
+          className="absolute w-full"
+          variants={containerVariants}
+          initial="hidden"
+          animate={controls}
+        >
           {projects.map((project) => (
             <motion.div
               key={project.id}
               layoutId={project.id}
               onClick={() => setSelectedId(project.id)}
               className={`cursor-pointer ${project.className}`}
-              initial={{ scale: 1 }}
+              custom={project.direction}
+              variants={itemVariants}
               whileHover={{ scale: 1.05 }}
             >
               <motion.img
@@ -82,7 +152,7 @@ export const MyProject = () => {
               />
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
 
       <AnimatePresence>
@@ -96,7 +166,7 @@ export const MyProject = () => {
           >
             <motion.div
               layoutId={selectedId}
-              className="relative rounded-lg max-w-[90vw] max-h-[90vh]  overflow-hidden"
+              className="relative rounded-lg max-w-[90vw] max-h-[90vh] overflow-hidden"
               onClick={(e) => e.stopPropagation()}
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{
@@ -111,8 +181,6 @@ export const MyProject = () => {
                   src={selectedProject.focusImage}
                   alt={selectedProject.title}
                   className="w-full h-full object-contain max-h-[80vh]"
-                  initial={{ scale: 1 }}
-                  animate={{ scale: 1 }}
                 />
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-8">
                   <motion.h2
