@@ -3,68 +3,46 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 import { Introduction } from "./Introduction";
 import { Skills } from "./Skills";
-
+import {
+  menuVariants,
+  letterVariants,
+  lineVariants,
+  nameVariants,
+} from "./navbarVariants";
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeMenu, setActiveMenu] = useState(null);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
-  const menuVariants = {
-    closed: {
-      y: "-100%",
-      transition: {
-        type: "spring",
-        stiffness: 300,
-        damping: 40,
-      },
-    },
-    open: {
-      y: 0,
-      transition: {
-        type: "spring",
-        stiffness: 300,
-        damping: 40,
-        delay: 0.1, // Menambahkan delay 0.2 detik
-      },
-    },
-  };
-
-  const lineVariants = {
-    hidden: { width: 0 },
-    visible: {
-      width: "100%",
-      transition: {
-        duration: 1,
-        ease: "easeInOut",
-      },
-    },
-  };
-
-  const nameVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.05, // Menurunkan delay antar huruf
-        delayChildren: 0.1, // Delay setelah animasi garis
-      },
-    },
-  };
-
-  const letterVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        type: "spring",
-        damping: 9, // Menurunkan damping untuk mempercepat animasi
-        stiffness: 300, // Menambahkan stiffness untuk mempercepat respons
-      },
-    },
+  const menuContent = {
+    HOME: (
+      <div className="flex flex-col justify-center items-center h-full text-white">
+        <h2 className="text-8xl font-bold mb-6">Welcome</h2>
+        <p className="text-2xl">Discover my portfolio</p>
+      </div>
+    ),
+    ABOUT: (
+      <div className="flex flex-col justify-center items-center h-full text-white">
+        <h2 className="text-8xl font-bold mb-6">About Me</h2>
+        <p className="text-2xl">Learn more about my journey</p>
+      </div>
+    ),
+    PROJECTS: (
+      <div className="flex flex-col justify-center items-center h-full text-white">
+        <h2 className="text-8xl font-bold mb-6">My Work</h2>
+        <p className="text-2xl">Explore my latest projects</p>
+      </div>
+    ),
+    CONTACT: (
+      <div className="flex flex-col justify-center items-center h-full text-white">
+        <h2 className="text-8xl font-bold mb-6">Get in Touch</h2>
+        <p className="text-2xl">Lets work together</p>
+      </div>
+    ),
   };
 
   return (
@@ -102,45 +80,77 @@ export const Navbar = () => {
                 <X size={32} />
               </button>
 
-              <ul className="flex flex-col space-y-8 text-xl">
-                <motion.li
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.3 }}
+              <div className="flex pt-5 h-full">
+                <div className="w-1/4">
+                  <ul
+                    className="flex flex-col space-y-8 text-xl"
+                    onMouseLeave={() => setActiveMenu(null)}
+                  >
+                    <motion.li
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.3 }}
+                      onMouseEnter={() => setActiveMenu("HOME")}
+                    >
+                      <a href="#home" className="text-black text-5xl">
+                        HOME
+                      </a>
+                    </motion.li>
+                    <motion.li
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.4 }}
+                      onMouseEnter={() => setActiveMenu("ABOUT")}
+                    >
+                      <a href="#about" className="text-black text-5xl">
+                        ABOUT
+                      </a>
+                    </motion.li>
+                    <motion.li
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.5 }}
+                      onMouseEnter={() => setActiveMenu("PROJECTS")}
+                    >
+                      <a href="#projects" className="text-black text-5xl">
+                        PROJECTS
+                      </a>
+                    </motion.li>
+                    <motion.li
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.6 }}
+                      onMouseEnter={() => setActiveMenu("CONTACT")}
+                    >
+                      <a href="#contact" className="text-black text-5xl">
+                        CONTACT
+                      </a>
+                    </motion.li>
+                  </ul>
+                </div>
+                <motion.div
+                  className={`w-3/4 h-full transition-colors duration-300 ${
+                    activeMenu ? "bg-[#1a1a1a]" : "bg-transparent"
+                  }`}
                 >
-                  <a href="#home" className="text-black text-5xl">
-                    HOME
-                  </a>
-                </motion.li>
-                <motion.li
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.4 }}
-                >
-                  <a href="#about" className="text-black text-5xl">
-                    ABOUT
-                  </a>
-                </motion.li>
-                <motion.li
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.5 }}
-                >
-                  <a href="#projects" className="text-black text-5xl">
-                    PROJECTS
-                  </a>
-                </motion.li>
-                <motion.li
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.6 }}
-                >
-                  <a href="#contact" className="text-black text-5xl">
-                    CONTACT
-                  </a>
-                </motion.li>
-              </ul>
+                  <AnimatePresence mode="wait">
+                    {activeMenu && (
+                      <motion.div
+                        key={activeMenu}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -20 }}
+                        transition={{ duration: 0.3 }}
+                        className="h-full"
+                      >
+                        {menuContent[activeMenu]}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </motion.div>
+              </div>
 
+              {/* HOVER ACTIVE */}
               <div>
                 <motion.hr
                   className="w-full border-t-4 border-black my-4"
@@ -168,7 +178,6 @@ export const Navbar = () => {
       </nav>
       <Introduction isOpen={isOpen} />
       <Skills isOpen={isOpen} />
-   
     </>
   );
 };
