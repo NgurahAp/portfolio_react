@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import  { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { CiMail } from "react-icons/ci";
 import { FaLinkedinIn } from "react-icons/fa6";
@@ -166,7 +166,7 @@ export const ContactUs = () => {
         </motion.div>
       </section>
       <section className="h-screen flex items-center justify-center text-3xl text-center px-36">
-        I appreciate your interest in my portfolio. I'm passionate about
+        I appreciate your interest in my portfolio. Im passionate about
         continuous learning and collaboration in the ever-evolving tech
         landscape.
       </section>

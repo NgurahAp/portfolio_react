@@ -9,6 +9,10 @@ import {
   lineVariants,
   nameVariants,
 } from "./navbarVariants";
+import Marquee from "react-fast-marquee";
+import { CiMail } from "react-icons/ci";
+import { FaLinkedinIn } from "react-icons/fa6";
+import { FaGithub, FaLink } from "react-icons/fa";
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,29 +22,120 @@ export const Navbar = () => {
     setIsOpen(!isOpen);
   };
 
+  const contacts = [
+    {
+      icon: <CiMail className="text-5xl mr-5" />,
+      text: "ngurahpratama2002@gmail.com",
+    },
+    {
+      icon: <FaLinkedinIn className="text-5xl mr-5" />,
+      text: "Ngurah Arya Pratama",
+    },
+    {
+      icon: <FaGithub className="text-5xl mr-5" />,
+      text: "NgurahAp",
+    },
+  ];
+
   const menuContent = {
     HOME: (
-      <div className="flex flex-col justify-center items-center h-full text-white">
-        <h2 className="text-8xl font-bold mb-6">Welcome</h2>
-        <p className="text-2xl">Discover my portfolio</p>
+      <div className="flex flex-col justify-center  px-10 h-full text-white">
+        <h2
+          className="text-5xl font-semibold underline"
+          style={{ fontFamily: "Playfair Display" }}
+        >
+          Introduction.
+        </h2>
+        <h1 className="text-8xl font-semibold pt-10">Ngurah Arya Pratama</h1>
+        <h2 className="text-2xl pt-4">
+          - Fullstack Developer | Mobile Developer -
+        </h2>
       </div>
     ),
-    ABOUT: (
-      <div className="flex flex-col justify-center items-center h-full text-white">
-        <h2 className="text-8xl font-bold mb-6">About Me</h2>
-        <p className="text-2xl">Learn more about my journey</p>
+    EXPERTISE: (
+      <div className="flex flex-col  justify-center items-center h-full text-white">
+        <Marquee direction="right" className="overflow-y-hidden" speed={40}>
+          <h1 className="text-7xl font-semibold  pt-10">
+            COMPETENCIES | &nbsp;
+          </h1>
+          <h1 className="text-7xl font-semibold pt-10">
+            COMPETENCIES | &nbsp;
+          </h1>
+          <h1 className="text-7xl font-semibold pt-10">
+            COMPETENCIES | &nbsp;
+          </h1>
+        </Marquee>
+        <Marquee direction="right" className="overflow-y-hidden" speed={60}>
+          <h1 className="text-7xl font-semibold pt-10">
+            COMPETENCIES | &nbsp;
+          </h1>
+          <h1 className="text-7xl font-semibold pt-10">
+            COMPETENCIES | &nbsp;
+          </h1>
+          <h1 className="text-7xl font-semibold pt-10">
+            COMPETENCIES | &nbsp;
+          </h1>
+        </Marquee>
+        <Marquee direction="right" className="overflow-y-hidden" speed={80}>
+          <h1 className="text-7xl font-semibold pt-10">
+            COMPETENCIES | &nbsp;
+          </h1>
+          <h1 className="text-7xl font-semibold pt-10">
+            COMPETENCIES | &nbsp;
+          </h1>
+          <h1 className="text-7xl font-semibold pt-10">
+            COMPETENCIES | &nbsp;
+          </h1>
+        </Marquee>
       </div>
     ),
     PROJECTS: (
       <div className="flex flex-col justify-center items-center h-full text-white">
-        <h2 className="text-8xl font-bold mb-6">My Work</h2>
-        <p className="text-2xl">Explore my latest projects</p>
+        <h2 className="text-8xl font-bold mb-6">My Projects</h2>
+        <p className="text-2xl">
+          Showcasing web and mobile apps focused on seamless user experiences.
+        </p>
       </div>
     ),
     CONTACT: (
-      <div className="flex flex-col justify-center items-center h-full text-white">
-        <h2 className="text-8xl font-bold mb-6">Get in Touch</h2>
-        <p className="text-2xl">Lets work together</p>
+      <div className="flex flex-col justify-center pl-20  h-full text-white">
+        {contacts.map((contact, index) => (
+          <div key={index} className="flex items-center group cursor-pointer py-5">
+            <motion.div
+              className="flex items-center"
+              whileHover={{ scale: 1.02 }}
+              transition={{ type: "spring", stiffness: 400, damping: 20 }}
+            >
+              <motion.div
+                whileHover={{
+                  rotate: [0, -10, 10, -10, 0],
+                  transition: {
+                    duration: 0.5,
+                    ease: "easeInOut",
+                  },
+                }}
+              >
+                {contact.icon}
+              </motion.div>
+              <h1 className="text-xl">{contact.text}</h1>
+              <motion.div
+                className="ml-5"
+                whileHover={{
+                  rotate: 360,
+                  scale: 1.2,
+                  transition: {
+                    duration: 0.5,
+                    type: "spring",
+                    stiffness: 200,
+                    damping: 10,
+                  },
+                }}
+              >
+                <FaLink className="text-gray-400" />
+              </motion.div>
+            </motion.div>
+          </div>
+        ))}
       </div>
     ),
   };
@@ -81,7 +176,7 @@ export const Navbar = () => {
               </button>
 
               <div className="flex pt-5 h-full">
-                <div className="w-1/4">
+                <div className="w-1/4 ">
                   <ul
                     className="flex flex-col space-y-8 text-xl"
                     onMouseLeave={() => setActiveMenu(null)}
@@ -100,10 +195,10 @@ export const Navbar = () => {
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.4 }}
-                      onMouseEnter={() => setActiveMenu("ABOUT")}
+                      onMouseEnter={() => setActiveMenu("EXPERTISE")}
                     >
                       <a href="#about" className="text-black text-5xl">
-                        ABOUT
+                        EXPERTISE
                       </a>
                     </motion.li>
                     <motion.li
@@ -129,7 +224,7 @@ export const Navbar = () => {
                   </ul>
                 </div>
                 <motion.div
-                  className={`w-3/4 h-full transition-colors duration-300 ${
+                  className={`w-3/4 h-full transition-colors duration-300 rounded-xl ${
                     activeMenu ? "bg-[#1a1a1a]" : "bg-transparent"
                   }`}
                 >
