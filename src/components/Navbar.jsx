@@ -4,6 +4,7 @@ import { X } from "lucide-react";
 import { Introduction } from "./Introduction";
 import { Skills } from "./Skills";
 import { MyProject } from "./MyProject";
+import { Experience } from "./Experience";
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -169,49 +170,7 @@ export const Navbar = () => {
       <Introduction isOpen={isOpen} />
       <Skills isOpen={isOpen} />
       <MyProject />
-      <section className="h-screen px-28 pt-36 flex">
-        <div className="w-1/2 ">
-          <h1
-            className="text-3xl underline"
-            style={{ fontFamily: "Playfair Display" }}
-          >
-            Education
-          </h1>
-        </div>
-        <div className="w-1/2">
-          <h1
-            className="text-3xl underline pb-14"
-            style={{ fontFamily: "Playfair Display" }}
-          >
-            Experience
-          </h1>
-          <div className="flex items-start space-x-4 ">
-            <div className="flex flex-col items-center">
-              <div className="w-4 h-4 bg-white rounded-full mt-1 "></div>
-              <div className="w-0.5 h-64 bg-white "></div>
-            </div>
-            <div className=" px-4 rounded-md  w-full">
-              <h3 className="text-xl font-semibold pb-4">
-                Sept 2023 - Dec 2023
-              </h3>
-              <h4 className="text-2xl font-bold">PT Menara Indonesia</h4>
-              <p className="mt-1 ">Frontend Web Developer | Intern</p>
-              <p className="mt-5">
-                Develop a Learning Management System (LMS), focusing on user
-                management and learning modules. This experience enhanced my
-                technical skills and highlighted the significance of digital
-                education.
-              </p>
-              <div className=" mt-4">
-                <h1 className="font-semibold">
-                  NextJS &nbsp; &nbsp;|&nbsp; &nbsp; TypeScript &nbsp;
-                  &nbsp;|&nbsp; &nbsp; Tailwind
-                </h1>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <Experience />
     </>
   );
 };
