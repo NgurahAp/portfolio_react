@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import PropTypes from "prop-types";
 import { MyProject } from "./MyProject";
 import { Experience } from "./Experience";
-import { ContactUs } from "./ContactUs.JSX";
+import ContactUs from "./ContactUs";
 
 export const Skills = ({ isOpen }) => {
   const [isVisible, setIsVisible] = useState(false);
