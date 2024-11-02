@@ -1,25 +1,17 @@
-// import { useState } from "react";
+import { useScroll, motion } from "framer-motion";
 import { Navbar } from "./components/Navbar";
-// import SplashScreen from "./components/SplashScreen"; // Impor komponen
 
 const App = () => {
-  // const [showSplash, setShowSplash] = useState(true);
+  const { scrollYProgress } = useScroll();
 
   return (
     <>
+      <motion.div
+        className="fixed top-0 left-0 right-0 h-1 bg-white origin-left"
+        style={{ scaleX: scrollYProgress }}
+      />
       <Navbar />
-     
     </>
-    // <>
-    //   {showSplash ? (
-    //     <SplashScreen onFinished={() => setShowSplash(false)} />
-    //   ) : (
-    //     <>
-    //       <Navbar />
-    //       <section className="h-screen px-20 text-[#dfdad5] py-28"></section>
-    //     </>
-    //   )}
-    // </>
   );
 };
 
