@@ -37,9 +37,9 @@ export const Introduction = ({ isOpen }) => {
   };
 
   return (
-    <section className="h-screen px-20 text-[#dfdad5] py-28 flex flex-col justify-between">
+    <section className="h-screen px-20 text-[#dfdad5] pt-40 flex flex-col">
       <motion.h1
-        className="text-8xl font-semibold underline"
+        className="text-6xl font-semibold underline pb-12"
         style={{ fontFamily: "Playfair Display" }}
         variants={introductionVariants}
         initial="hidden"
@@ -49,8 +49,8 @@ export const Introduction = ({ isOpen }) => {
       </motion.h1>
       <div>
         <motion.div variants={nameVariants} initial="hidden" animate="animate">
-          <h1 className="text-9xl font-semibold">Ngurah Arya Pratama</h1>
-          <h2 className="text-3xl pt-8">
+          <h1 className="text-7xl font-semibold">Ngurah Arya Pratama</h1>
+          <h2 className="text-xl pt-8">
             - Fullstack Developer | Mobile Developer -
           </h2>
         </motion.div>
@@ -60,7 +60,7 @@ export const Introduction = ({ isOpen }) => {
           initial="hidden"
           animate="animate"
         >
-          <p className="text-xl pt-8">
+          <p className=" pt-8">
             <span className="font-bold">Hi there!</span>👋 My name is Arya,
             I&apos;m a System Information student at Universitas BSI with a
             strong interest in mobile and web application development. I have
@@ -70,13 +70,13 @@ export const Introduction = ({ isOpen }) => {
           </p>
           <div className="flex gap-10">
             <button
-              className="border-[1px] rounded-md text-xl text-[#1a1a1a] font-semibold bg-[#dfdad5] px-4 py-2 mt-14"
+              className="border-[1px] rounded-md  text-[#1a1a1a] font-semibold bg-[#dfdad5] px-4 py-2 mt-14"
               style={{ fontFamily: "Playfair Display" }}
             >
               DOWNLOAD CV
             </button>
             <button
-              className="border-[1px] rounded-md text-xl border-[#dfdad5] font-semibold px-4 py-2 mt-14"
+              className="border-[1px] rounded-md  border-[#dfdad5] font-semibold px-4 py-2 mt-14"
               style={{ fontFamily: "Playfair Display" }}
             >
               CONTACT ME

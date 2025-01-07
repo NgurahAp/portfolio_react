@@ -29,7 +29,7 @@ export const MyProject = () => {
       focusImage: "/projects/lxp.jpg",
       title: "LXP M-Knows",
       subtitle: "Learning Management System.",
-      className: "absolute w-4/6 h-auto right-32 top-[32rem]",
+      className: "absolute w-4/6 h-auto right-28 top-[25rem]",
       direction: "right",
     },
     {
@@ -47,7 +47,7 @@ export const MyProject = () => {
       focusImage: "/projects/resqguide.png",
       title: "ResQ Guide",
       subtitle: "Emergency Response with AI Powered.",
-      className: "absolute h-64 w-auto left-16 top-72",
+      className: "absolute h-44 w-auto left-16 top-72",
       direction: "right",
     },
   ];
@@ -91,13 +91,13 @@ export const MyProject = () => {
   };
 
   return (
-    <section ref={sectionRef} className="h-screen flex px-20">
-      <div className="w-1/2 flex flex-col justify-center">
+    <section ref={sectionRef} className="h-screen flex px-20 ">
+      <div className="w-1/2 flex flex-col justify-center ">
         <motion.h1
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
           transition={{ duration: 0.6 }}
-          className="text-8xl font-bold"
+          className="text-7xl font-bold"
         >
           My Projects
         </motion.h1>
@@ -122,7 +122,7 @@ export const MyProject = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6, delay: 0.6 }}
-          className="border-[1px] rounded-md text-xl w-32 border-[#dfdad5] font-semibold px-2 py-2"
+          className="border-[1px] rounded-md text-base w-32 border-[#dfdad5] font-semibold px-2 py-2"
           style={{ fontFamily: "Playfair Display" }}
         >
           MORE

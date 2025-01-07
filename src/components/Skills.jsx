@@ -88,7 +88,7 @@ export const Skills = ({ isOpen }) => {
       >
         <div className="w-full items-center justify-center">
           <motion.h1
-            className="text-center text-4xl font-semibold"
+            className="text-center text-3xl font-semibold"
             initial={{ opacity: 0, y: -30 }}
             animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: -30 }}
             transition={{ duration: 0.5, delay: 0.3 }}
@@ -96,7 +96,7 @@ export const Skills = ({ isOpen }) => {
             Core Competencies
           </motion.h1>
           <motion.h2
-            className="text-center text-lg pt-2"
+            className="text-center text-base pt-2"
             initial={{ opacity: 0, y: -30 }}
             animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: -30 }}
             transition={{ duration: 0.5, delay: 0.5 }}
@@ -135,7 +135,7 @@ export const Skills = ({ isOpen }) => {
                   viewBox="0 0 24 24"
                   strokeWidth={1.5}
                   stroke="currentColor"
-                  className="h-16"
+                  className="h-12"
                 >
                   <path
                     strokeLinecap="round"
@@ -143,7 +143,7 @@ export const Skills = ({ isOpen }) => {
                     d={skill.icon}
                   />
                 </svg>
-                <h1 className="text-center pt-2 text-lg">{skill.title}</h1>
+                <h1 className="text-center text-sm pt-2 ">{skill.title}</h1>
               </motion.div>
             ))}
           </motion.div>
@@ -155,11 +155,11 @@ export const Skills = ({ isOpen }) => {
               initial="hidden"
               animate={isVisible ? "visible" : "hidden"}
             >
-              <h1 className="tracking-[0.2em] font-medium pb-7 text-2xl">
+              <h1 className="tracking-[0.2em] font-medium pb-7 text-lg">
                 L A N G U A G E &nbsp;&nbsp;&amp;&nbsp;&nbsp; F R A M E W O R K
               </h1>
               <motion.p
-                className="text-center text-lg"
+                className="text-center text-sm"
                 variants={frameworkVariants}
                 initial="hidden"
                 animate={isVisible ? "visible" : "hidden"}
@@ -200,11 +200,11 @@ export const Skills = ({ isOpen }) => {
               initial="hidden"
               animate={isVisible ? "visible" : "hidden"}
             >
-              <h1 className="tracking-[0.2em] font-medium pb-7 text-2xl">
+              <h1 className="tracking-[0.2em] font-medium pb-7 text-lg">
                 T O O L S &nbsp;&nbsp;&amp;&nbsp;&nbsp; T E C H N O L O G Y
               </h1>
               <motion.p
-                className="text-center text-lg"
+                className="text-center text-sm"
                 variants={toolsVariants}
                 initial="hidden"
                 animate={isVisible ? "visible" : "hidden"}

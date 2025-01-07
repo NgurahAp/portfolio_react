@@ -24,15 +24,15 @@ export const Navbar = () => {
 
   const contacts = [
     {
-      icon: <CiMail className="text-5xl mr-5" />,
+      icon: <CiMail className="text-3xl mr-5" />,
       text: "ngurahpratama2002@gmail.com",
     },
     {
-      icon: <FaLinkedinIn className="text-5xl mr-5" />,
+      icon: <FaLinkedinIn className="text-3xl mr-5" />,
       text: "Ngurah Arya Pratama",
     },
     {
-      icon: <FaGithub className="text-5xl mr-5" />,
+      icon: <FaGithub className="text-3xl mr-5" />,
       text: "NgurahAp",
     },
   ];
@@ -41,13 +41,13 @@ export const Navbar = () => {
     HOME: (
       <div className="flex flex-col justify-center  px-10 h-full text-white">
         <h2
-          className="text-5xl font-semibold underline"
+          className="text-3xl font-semibold underline"
           style={{ fontFamily: "Playfair Display" }}
         >
           Introduction.
         </h2>
-        <h1 className="text-8xl font-semibold pt-10">Ngurah Arya Pratama</h1>
-        <h2 className="text-2xl pt-4">
+        <h1 className="text-6xl font-semibold pt-10">Ngurah Arya Pratama</h1>
+        <h2 className="text-xl pt-4">
           - Fullstack Developer | Mobile Developer -
         </h2>
       </div>
@@ -55,35 +55,35 @@ export const Navbar = () => {
     EXPERTISE: (
       <div className="flex flex-col  justify-center items-center h-full text-white">
         <Marquee direction="right" className="overflow-y-hidden" speed={40}>
-          <h1 className="text-7xl font-semibold  pt-10">
+          <h1 className="text-5xl font-semibold  pt-10">
             COMPETENCIES | &nbsp;
           </h1>
-          <h1 className="text-7xl font-semibold pt-10">
+          <h1 className="text-5xl font-semibold pt-10">
             COMPETENCIES | &nbsp;
           </h1>
-          <h1 className="text-7xl font-semibold pt-10">
+          <h1 className="text-5xl font-semibold pt-10">
             COMPETENCIES | &nbsp;
           </h1>
         </Marquee>
         <Marquee direction="right" className="overflow-y-hidden" speed={60}>
-          <h1 className="text-7xl font-semibold pt-10">
+          <h1 className="text-5xl font-semibold pt-10">
             COMPETENCIES | &nbsp;
           </h1>
-          <h1 className="text-7xl font-semibold pt-10">
+          <h1 className="text-5xl font-semibold pt-10">
             COMPETENCIES | &nbsp;
           </h1>
-          <h1 className="text-7xl font-semibold pt-10">
+          <h1 className="text-5xl font-semibold pt-10">
             COMPETENCIES | &nbsp;
           </h1>
         </Marquee>
         <Marquee direction="right" className="overflow-y-hidden" speed={80}>
-          <h1 className="text-7xl font-semibold pt-10">
+          <h1 className="text-5xl font-semibold pt-10">
             COMPETENCIES | &nbsp;
           </h1>
-          <h1 className="text-7xl font-semibold pt-10">
+          <h1 className="text-5xl font-semibold pt-10">
             COMPETENCIES | &nbsp;
           </h1>
-          <h1 className="text-7xl font-semibold pt-10">
+          <h1 className="text-5xl font-semibold pt-10">
             COMPETENCIES | &nbsp;
           </h1>
         </Marquee>
@@ -91,8 +91,8 @@ export const Navbar = () => {
     ),
     PROJECTS: (
       <div className="flex flex-col justify-center items-center h-full text-white">
-        <h2 className="text-8xl font-bold mb-6">My Projects</h2>
-        <p className="text-2xl">
+        <h2 className="text-3xl font-bold mb-6">My Projects</h2>
+        <p className="text-xl">
           Showcasing web and mobile apps focused on seamless user experiences.
         </p>
       </div>
@@ -117,7 +117,7 @@ export const Navbar = () => {
               >
                 {contact.icon}
               </motion.div>
-              <h1 className="text-xl">{contact.text}</h1>
+              <h1 className="text-base">{contact.text}</h1>
               <motion.div
                 className="ml-5"
                 whileHover={{
@@ -187,7 +187,7 @@ export const Navbar = () => {
                       transition={{ delay: 0.3 }}
                       onMouseEnter={() => setActiveMenu("HOME")}
                     >
-                      <a href="#home" className="text-black text-5xl">
+                      <a href="#home" className="text-black text-4xl">
                         HOME
                       </a>
                     </motion.li>
@@ -197,7 +197,7 @@ export const Navbar = () => {
                       transition={{ delay: 0.4 }}
                       onMouseEnter={() => setActiveMenu("EXPERTISE")}
                     >
-                      <a href="#about" className="text-black text-5xl">
+                      <a href="#about" className="text-black text-4xl">
                         EXPERTISE
                       </a>
                     </motion.li>
@@ -207,7 +207,7 @@ export const Navbar = () => {
                       transition={{ delay: 0.5 }}
                       onMouseEnter={() => setActiveMenu("PROJECTS")}
                     >
-                      <a href="#projects" className="text-black text-5xl">
+                      <a href="#projects" className="text-black text-4xl">
                         PROJECTS
                       </a>
                     </motion.li>
@@ -217,7 +217,7 @@ export const Navbar = () => {
                       transition={{ delay: 0.6 }}
                       onMouseEnter={() => setActiveMenu("CONTACT")}
                     >
-                      <a href="#contact" className="text-black text-5xl">
+                      <a href="#contact" className="text-black text-4xl">
                         CONTACT
                       </a>
                     </motion.li>
@@ -254,7 +254,7 @@ export const Navbar = () => {
                   animate="visible"
                 />
                 <motion.h1
-                  className="text-black text-5xl font-semibold"
+                  className="text-black text-4xl font-semibold"
                   style={{ fontFamily: "Playfair Display" }}
                   variants={nameVariants}
                   initial="hidden"

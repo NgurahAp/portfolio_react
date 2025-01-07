@@ -73,25 +73,25 @@ export const ContactUs = () => {
 
   const contacts = [
     {
-      icon: <CiMail className="text-5xl mr-5" />,
+      icon: <CiMail className="text-3xl mr-5" />,
       text: "ngurahpratama2002@gmail.com",
     },
     {
-      icon: <FaLinkedinIn className="text-5xl mr-5" />,
+      icon: <FaLinkedinIn className="text-3xl mr-5" />,
       text: "Ngurah Arya Pratama",
     },
     {
-      icon: <FaGithub className="text-5xl mr-5" />,
+      icon: <FaGithub className="text-3xl mr-5" />,
       text: "NgurahAp",
     },
   ];
 
   return (
     <>
-      <section ref={sectionRef} className="h-[60vh] flex overflow-hidden">
+      <section ref={sectionRef} className="min-h-[100vh] flex items-center overflow-hidden">
         <div className="w-1/2 flex items-center pl-28">
           <motion.h1
-            className="font-bold text-8xl"
+            className="font-bold text-7xl"
             variants={titleVariants}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
@@ -144,7 +144,7 @@ export const ContactUs = () => {
                 >
                   {contact.icon}
                 </motion.div>
-                <h1 className="text-xl">{contact.text}</h1>
+                <h1 className="">{contact.text}</h1>
                 <motion.div
                   className="ml-5"
                   whileHover={{
@@ -165,7 +165,7 @@ export const ContactUs = () => {
           ))}
         </motion.div>
       </section>
-      <section className="h-screen flex items-center justify-center text-3xl text-center px-36">
+      <section className="h-screen flex items-center justify-center text-xl text-center px-36">
         I appreciate your interest in my portfolio. Im passionate about
         continuous learning and collaboration in the ever-evolving tech
         landscape.

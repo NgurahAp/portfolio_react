@@ -39,7 +39,7 @@ export const Experience = () => {
   };
 
   return (
-    <section ref={sectionRef} className="h-screen px-28 pt-36 flex">
+    <section ref={sectionRef} className="min-h-screen px-28 pt-36 flex">
       <motion.div
         className="w-1/2"
         variants={containerVariants}
@@ -48,7 +48,7 @@ export const Experience = () => {
       >
         <motion.h1
           variants={itemVariants}
-          className="text-3xl underline pb-14"
+          className="text-2xl underline pb-10"
           style={{ fontFamily: "Playfair Display" }}
         >
           Education
@@ -56,12 +56,12 @@ export const Experience = () => {
         <motion.div variants={itemVariants} className="text-white space-y-1">
           <div className="flex items-center space-x-4">
             <div className="w-3 h-3 bg-white rounded-full"></div>
-            <h2 className="text-2xl font-semibold">
+            <h2 className="text-lg font-semibold">
               Information System (Bachelor)
             </h2>
-            <FaLink className="text-gray-400 text-2xl" />
+            <FaLink className="text-gray-400 text-lg" />
           </div>
-          <div className="flex space-x-2 text-lg text-gray-400 pl-7">
+          <div className="flex space-x-2 text-sm text-gray-400 pl-7">
             <span>BSI University</span>
             <span>•</span>
             <span>GPA 3.89</span>
@@ -72,7 +72,7 @@ export const Experience = () => {
 
         <motion.h1
           variants={itemVariants}
-          className="text-3xl underline pb-14 pt-20"
+          className="text-2xl underline pb-10 pt-20"
           style={{ fontFamily: "Playfair Display" }}
         >
           Certificate
@@ -101,10 +101,10 @@ export const Experience = () => {
             >
               <div className="flex items-center space-x-4">
                 <div className="w-3 h-3 bg-white rounded-full"></div>
-                <h2 className="text-2xl font-semibold">{cert.title}</h2>
-                <FaLink className="text-gray-400 text-2xl" />
+                <h2 className="text-lg font-semibold">{cert.title}</h2>
+                <FaLink className="text-gray-400 text-lg" />
               </div>
-              <div className="flex space-x-2 text-lg text-gray-400 pl-7">
+              <div className="flex space-x-2 text-sm text-gray-400 pl-7">
                 <span>{cert.org}</span>
                 {cert.score && (
                   <>
@@ -132,7 +132,7 @@ export const Experience = () => {
       >
         <motion.h1
           variants={itemVariants}
-          className="text-3xl underline pb-14"
+          className="text-2xl underline pb-14"
           style={{ fontFamily: "Playfair Display" }}
         >
           Experience
@@ -153,17 +153,17 @@ export const Experience = () => {
             variants={itemVariants}
             className="px-4 rounded-md w-full"
           >
-            <h3 className="text-xl font-semibold pb-4">Sept 2023 - Dec 2023</h3>
-            <h4 className="text-2xl font-bold">PT Menara Indonesia</h4>
-            <p className="mt-1">Frontend Web Developer | Intern</p>
-            <p className="mt-5">
+            <h3 className="text-lg font-semibold pb-4">Sept 2023 - Dec 2023</h3>
+            <h4 className="text-xl font-bold">PT Menara Indonesia</h4>
+            <p className="mt-1 text-sm">Frontend Web Developer | Intern</p>
+            <p className="mt-5 text-xs">
               Develop a Learning Management System (LMS), focusing on user
               management and learning modules. This experience enhanced my
               technical skills and highlighted the significance of digital
               education.
             </p>
             <div className="mt-4">
-              <h1 className="font-semibold">
+              <h1 className="font-semibold text-sm">
                 NextJS &nbsp; &nbsp;|&nbsp; &nbsp; TypeScript &nbsp;
                 &nbsp;|&nbsp; &nbsp; Tailwind
               </h1>
